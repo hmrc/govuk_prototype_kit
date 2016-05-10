@@ -2,6 +2,7 @@
 .DS_Store
 .start.pid
 .port.tmp
+*.log
 public
 govuk_modules
 node_modules/*
