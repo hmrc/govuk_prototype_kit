@@ -7,6 +7,8 @@
     "node": ">=4.0 <5.0"
   },
   "scripts": {
+    "hmrc:build:js": "cd ./node_modules/assets-frontend; gulp browserify; cd -;",
+    "prestart": "npm run hmrc:build:js",
     "start": "node start.js"
   },
   "dependencies": {
