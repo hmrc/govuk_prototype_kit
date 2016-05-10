@@ -36,6 +36,13 @@ module.exports = function(grunt){
         ignoreInDest: "**/stylesheets/**",
         updateAndDelete: true
       },
+      hmrc: {
+        files: [{
+          cwd: 'node_modules/assets-frontend/assets/public/999-SNAPSHOT/javascripts/',
+          src: ['**', '!mdtpdf.min.js'],
+          dest: 'public/javascripts/hmrc'
+        }]
+      },
       govuk: {
         files: [{
           cwd: 'node_modules/govuk_frontend_toolkit/',
