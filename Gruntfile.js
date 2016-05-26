@@ -10,7 +10,7 @@ module.exports = function(grunt){
           includePaths: [
             'govuk_modules/govuk_template/assets/stylesheets',
             'govuk_modules/govuk_frontend_toolkit/stylesheets',
-            'node_modules/assets-frontend/assets'
+            'hmrc_modules/'
           ],
           outputStyle: 'expanded'
         },
