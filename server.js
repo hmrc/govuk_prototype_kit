@@ -44,8 +44,7 @@ app.use('/public', express.static(__dirname + '/public'));
 app.use('/public', express.static(__dirname + '/govuk_modules/govuk_template/assets'));
 app.use('/public', express.static(__dirname + '/govuk_modules/govuk_frontend_toolkit'));
 app.use('/public/images/icons', express.static(__dirname + '/govuk_modules/govuk_frontend_toolkit/images'));
-app.use('/public/images', express.static(__dirname + '/hmrc_modules/images'));
-app.use('/public/javascripts', express.static(__dirname + '/hmrc_modules/javascripts'));
+app.use('/public', express.static(__dirname + '/hmrc_modules'));
 
 // Elements refers to icon folder instead of images folder
 app.use(favicon(path.join(__dirname, 'govuk_modules', 'govuk_template', 'assets', 'images','favicon.ico')));
