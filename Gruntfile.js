@@ -38,9 +38,22 @@ module.exports = function(grunt){
       },
       hmrc: {
         files: [{
-          cwd: 'node_modules/assets-frontend/assets/public/999-SNAPSHOT/javascripts/',
-          src: ['**', '!mdtpdf.min.js'],
-          dest: 'public/javascripts/hmrc'
+          cwd: 'node_modules/assets-frontend/assets/',
+          src: [
+            'scss/**',
+            'govuk_elements/**',
+            'govuk_frontend_static/**',
+            'govuk_frontend_toolkit/**',
+            'images/**'
+          ],
+          dest: 'hmrc_modules/'
+        },
+        {
+          cwd: 'node_modules/assets-frontend/assets/dist',
+          src: [
+            'javascripts/**'
+          ],
+          dest: 'hmrc_modules/'
         }]
       },
       govuk: {
