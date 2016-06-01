@@ -48,11 +48,7 @@ module.exports = function(grunt){
         }]
       },
       govuk: {
-        files: [{
-          cwd: 'node_modules/govuk_frontend_toolkit/',
-          src: '**',
-          dest: 'govuk_modules/govuk_frontend_toolkit/'
-        },
+        files: [
         {
           cwd: 'node_modules/govuk_template_mustache/assets/',
           src: '**',
