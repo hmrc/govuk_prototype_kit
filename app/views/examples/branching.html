@@ -5,16 +5,13 @@
 {% endblock %}
 
 {% block content %}
-<main id="content" role="main">
+<main id="wrapper" role="main">
+  <div id="content">
+    <article class="content__body">
 
-  {% include "includes/breadcrumb_examples.html" %}
+      <form action="/examples/over-18" method="get">
 
-  <div class="grid-row">
-    <div class="column-two-thirds">
-
-      <form action="/examples/over-18" method="get" class="form">
-
-        <h1 class="heading-xlarge">
+        <h1>
           Branching
         </h1>
 
@@ -26,10 +23,10 @@
           You can see the code for this example here:
         </p>
 
-        <div class="code">
+        <pre class="code">
           /app/routes.js
           /app/views/examples/branching.html
-        </div>
+        </pre>
 
         <h2 class="heading-medium">
           Are you 18 or over?
@@ -40,12 +37,12 @@
 
             <legend class="visuallyhidden">Are you 18 or over?</legend>
 
-            <label for="over18True" class="block-label">
+            <label for="over18True" class="block-label block-label--inline-right">
               <input type="radio" name="over18" value="true" id="over18True">
               Yes
             </label>
 
-            <label for="over18False" class="block-label">
+            <label for="over18False" class="block-label block-label--inline-right">
               <input type="radio" name="over18" value="false" id="over18False">
               No
             </label>
@@ -59,7 +56,7 @@
 
       </form>
 
-    </div>
+    </article>
   </div>
 </main>
 {% endblock %}
