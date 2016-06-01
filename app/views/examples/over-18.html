@@ -5,26 +5,23 @@
 {% endblock %}
 
 {% block content %}
-<main id="content" role="main">
+<main id="wrapper" role="main">
+  <div id="content">
+    <article class="content__body">
 
-  {% include "includes/breadcrumb_examples.html" %}
+      <h1>
+        Over 18
+      </h1>
 
-  <div class="grid-row">
-    <div class="column-two-thirds">
+      <p>
+        Congratulations, you are over 18.
+      </p>
 
-        <h1 class="heading-xlarge">
-          Over 18
-        </h1>
+      <p>
+        <a href="/examples/branching">Back to the branching example</a>
+      </p>
 
-        <p>
-          Congratulations, you are over 18.
-        </p>
-
-        <p>
-          <a href="/examples/branching">Back to the branching example</a>
-        </p>
-
-    </div>
+    </article>
   </div>
 </main>
 {% endblock %}

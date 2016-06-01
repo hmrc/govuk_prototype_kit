@@ -5,12 +5,9 @@
 {% endblock %}
 
 {% block content %}
-<main id="content" role="main">
-
-  {% include "includes/breadcrumb_examples.html" %}
-
-  <div class="grid-row">
-    <div class="column-two-thirds">
+<main id="wrapper" role="main">
+  <div id="content">
+    <article class="content__body">
 
         <h1 class="heading-xlarge">
           Under 18
@@ -24,7 +21,7 @@
           <a href="/examples/branching">Back to the branching example</a>
         </p>
 
-    </div>
+    </article>
   </div>
 </main>
 {% endblock %}
