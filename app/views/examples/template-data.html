@@ -5,14 +5,11 @@
 {% endblock %}
 
 {% block content %}
-<main id="content" role="main">
+<main id="wrapper" role="main">
+  <div id="content">
+    <article class="content__body">
 
-  {% include "includes/breadcrumb_examples.html" %}
-
-  <div class="grid-row">
-    <div class="column-two-thirds">
-
-      <h1 class="heading-xlarge">
+      <h1>
         Passing data into pages
       </h1>
 
@@ -24,7 +21,7 @@
         Have a look at the source for this page in your text editor to see how it works: <code class="code">/app/views/examples/template-data.html</code>
       </p>
 
-    </div>
+    </article>
   </div>
 
 </main>

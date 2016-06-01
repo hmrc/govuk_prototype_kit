@@ -6,114 +6,110 @@
 
 {% block content %}
 
-<main id="content" role="main">
+<main id="wrapper" role="main">
+  <div id="content">
+    <article class="content__body">
+      <h1>Example pages and patterns</h1>
 
-  <div class="breadcrumbs">
-    <ol>
-      <li><a href="/">GOV.UK prototype kit</a></li>
-    </ol>
-  </div>
+      <p>
+        Use these as the basis for your prototypes.
+        We recommend making copies of the examples rather than directly editing them.
+      </p>
 
-  <h1 class="heading-xlarge">Example pages and patterns</h1>
+      <div class="grid-layout">
 
-  <p class="text">
-    Use these as the basis for your prototypes.
-    We recommend making copies of the examples rather than directly editing them.
-  </p>
+        <div class="grid-layout__column grid-layout__column--1-3">
+          <h2>Page elements</h2>
+          <ul class="bullets">
+            <li>
+              <a href="http://hmrc.github.io/assets-frontend/section-grids.html">
+                Grid layout
+              </a>
+            </li>
+            <li>
+              <a href="http://hmrc.github.io/assets-frontend/section-typography.html">
+                Typography
+              </a>
+            </li>
+            <li>
+              <a href="http://hmrc.github.io/assets-frontend/section-form.html">
+                Basic form example
+              </a>
+            </li>
+            <li>
+              <a href="http://hmrc.github.io/assets-frontend/section-radio-input.html">
+                Radio buttons and checkboxes
+              </a>
+            </li>
+            <li>
+              <a href="http://hmrc.github.io/assets-frontend/section-toggle-button.html">
+                Toggling content
+              </a>
+            </li>
+          </ul>
+        </div>
 
-  <div class="grid-row">
+        <div class="grid-layout__column grid-layout__column--1-3">
 
-    <div class="column-third">
-      <h2 class="heading-medium">Page elements</h2>
-      <ul class="list list-bullet">
-        <li>
-          <a href="/examples/elements/grid-layout">
-            Grid layout
-          </a>
-        </li>
-        <li>
-          <a href="/examples/elements/typography">
-            Typography
-          </a>
-        </li>
-        <li>
-          <a href="/examples/elements/forms">
-            Basic form example
-          </a>
-        </li>
-        <li>
-          <a href="/examples/elements/radio-buttons-checkboxes">
-            Radio buttons and checkboxes
-          </a>
-        </li>
-        <li>
-          <a href="/examples/elements/toggled-content">
-            Toggling content
-          </a>
-        </li>
-      </ul>
-    </div>
+          <h2>Page templates</h2>
+          <ul class="bullets">
+            <li>
+              <a href="/examples/blank-govuk">
+                Blank
+              </a>
+            </li>
+            <li>
+              <a href="/examples/blank-unbranded">
+                Blank (non-GOV.UK)
+              </a>
+            </li>
+            <li>
+              <a href="/examples/start-page">
+                Start
+              </a>
+            </li>
+            <li>
+              <a href="/examples/question-page">
+                Question
+              </a>
+            </li>
+            <li>
+              <a href="/examples/check-your-answers-page">
+                Check your answers
+              </a>
+            </li>
+            <li>
+              <a href="/examples/confirmation-page">
+                Confirmation
+              </a>
+            </li>
+          </ul>
+        </div>
 
-    <div class="column-third">
+        <div class="grid-layout__column grid-layout__column--1-3">
 
-      <h2 class="heading-medium">Page templates</h2>
-      <ul class="list list-bullet">
-        <li>
-          <a href="/examples/blank-govuk">
-            Blank
-          </a>
-        </li>
-        <li>
-          <a href="/examples/blank-unbranded">
-            Blank (non-GOV.UK)
-          </a>
-        </li>
-        <li>
-          <a href="/examples/start-page">
-            Start
-          </a>
-        </li>
-        <li>
-          <a href="/examples/question-page">
-            Question
-          </a>
-        </li>
-        <li>
-          <a href="/examples/check-your-answers-page">
-            Check your answers
-          </a>
-        </li>
-        <li>
-          <a href="/examples/confirmation-page">
-            Confirmation
-          </a>
-        </li>
-      </ul>
-    </div>
-
-    <div class="column-third">
-
-      <h2 class="heading-medium">Template features</h2>
-      <ul class="list list-bullet">
-        <li>
-          <a href="/examples/template-data">
-            Passing data into a template
-          </a>
-        </li>
-        <li>
-          <a href="/examples/branching">
-            Branching
-          </a>
-          <p class="font-xsmall">(Showing a different page based on user input)</p>
-        </li>
-        <li>
-          <a href="/examples/template-partial-areas">
-            Template partial areas
-          </a>
-        </li>
-      </ul>
-    </div>
-
+          <h2>Template features</h2>
+          <ul class="bullets">
+            <li>
+              <a href="/examples/template-data">
+                Passing data into a template
+              </a>
+            </li>
+            <li>
+              <a href="/examples/branching">
+                Branching
+              </a>
+              <p class="font-xsmall">(Showing a different page based on user input)</p>
+            </li>
+            <li>
+              <a href="/examples/template-partial-areas">
+                Template partial areas
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </article>
   </div>
 
 </main>
