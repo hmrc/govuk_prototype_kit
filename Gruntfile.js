@@ -9,7 +9,8 @@ module.exports = function(grunt){
           sourcemap: true,
           includePaths: [
             'govuk_modules/govuk_template/assets/stylesheets',
-            'govuk_modules/govuk_frontend_toolkit/stylesheets',
+            'hmrc_modules/govuk_elements/govuk/public/sass',
+            'hmrc_modules/govuk_frontend_toolkit/stylesheets',
             'hmrc_modules/'
           ],
           outputStyle: 'expanded'
@@ -26,16 +27,6 @@ module.exports = function(grunt){
 
     // Copies templates and assets from external modules and dirs
     sync: {
-      assets: {
-        files: [{
-          expand: true,
-          cwd: 'app/assets/',
-          src: ['**/*', '!sass/**'],
-          dest: 'public/'
-        }],
-        ignoreInDest: "**/stylesheets/**",
-        updateAndDelete: true
-      },
       hmrc: {
         files: [{
           cwd: 'node_modules/assets-frontend/assets/',
@@ -57,11 +48,7 @@ module.exports = function(grunt){
         }]
       },
       govuk: {
-        files: [{
-          cwd: 'node_modules/govuk_frontend_toolkit/',
-          src: '**',
-          dest: 'govuk_modules/govuk_frontend_toolkit/'
-        },
+        files: [
         {
           cwd: 'node_modules/govuk_template_mustache/assets/',
           src: '**',
@@ -87,13 +74,6 @@ module.exports = function(grunt){
       css: {
         files: ['app/assets/sass/**/*.scss'],
         tasks: ['sass'],
-        options: {
-          spawn: false,
-        }
-      },
-      assets:{
-        files: ['app/assets/**/*', '!app/assets/sass/**'],
-        tasks: ['sync:assets'],
         options: {
           spawn: false,
         }
