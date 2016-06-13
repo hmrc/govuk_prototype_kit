@@ -9,3 +9,4 @@ node_modules/*
 .tmuxp.*
 .idea
 hmrc_modules
+lib/govuk_template.html
