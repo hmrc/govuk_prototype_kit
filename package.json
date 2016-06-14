@@ -8,6 +8,7 @@
   },
   "scripts": {
     "hmrc": "cd ./node_modules/assets-frontend; ./server.sh build; cd -;",
+    "heroku-postbuild": "npm run hmrc",
     "prestart": "npm run hmrc",
     "start": "node start.js"
   },
