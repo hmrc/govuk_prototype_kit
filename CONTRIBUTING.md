@@ -5,10 +5,9 @@ We do have a few guidelines to bear in mind.
 
 ## Community
 
-We have two Slack channels for the Prototype kit. You'll need a government email address to join them.
+We have a Slack channel for the HMRC Prototype kit. You'll need an HMRC email address to join it.
 
-* [Slack channel for users of the prototype kit](https://ukgovernmentdigital.slack.com/messages/prototype-kit/)
-* [Slack channel for developers of the prototype kit](https://ukgovernmentdigital.slack.com/messages/prototype-kit-dev/)
+* [Slack channel for the HMRC prototype kit](https://hmrcdigital.slack.com/messages/prototype-kit/)
 
 ## Raising bugs
 
@@ -24,11 +23,6 @@ When describing the bug it's useful to follow the format:
 Please raise feature requests as issues before contributing any code.
 
 This ensures they are discussed properly before any time is spent on them.
-
-## GOV.UK Elements
-
-The project contains code taken from the [GOV.UK Elements](https://github.com/alphagov/govuk_elements/) project.
-Please check that any issues related to that code are raised with that project, not this one.
 
 ## Contributing code
 
