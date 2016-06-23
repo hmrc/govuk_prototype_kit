@@ -27,23 +27,15 @@ module.exports = function(grunt){
 
     // Copies templates and assets from external modules and dirs
     sync: {
-			assets_js: {
+			assets: {
 				files: [{
-					cwd: 'app/assets',
-					src: [
-						'javascripts/**'
-					],
+					expand: true,
+					cwd: 'app/assets/',
+					src: ['**/*', '!sass/**'],
 					dest: 'public/'
-				}]
-			},
-			assets_images: {
-				files: [{
-					cwd: 'app/assets',
-					src: [
-						'images/**'
-					],
-					dest: 'public/'
-				}]
+				}],
+				ignoreInDest: "**/stylesheets/**",
+				updateAndDelete: true
 			},
       hmrc: {
         files: [{
@@ -93,21 +85,14 @@ module.exports = function(grunt){
         files: ['app/assets/sass/**/*.scss'],
         tasks: ['sass'],
         options: {
-          spawn: false,
+          spawn: false
         }
       },
-			js: {
-				files: ['app/assets/javascripts/*.js'],
-				tasks: ['sync:assets_js'],
+			assets:{
+				files: ['app/assets/**/*', '!app/assets/sass/**'],
+				tasks: ['sync:assets'],
 				options: {
-					spawn: false,
-				}
-			},
-			images: {
-				files: ['app/assets/images/**'],
-				tasks: ['sync:assets_images'],
-				options: {
-					spawn: false,
+					spawn: false
 				}
 			}
     },
