@@ -27,6 +27,16 @@ module.exports = function(grunt){
 
     // Copies templates and assets from external modules and dirs
     sync: {
+			assets: {
+				files: [{
+					expand: true,
+					cwd: 'app/assets/',
+					src: ['**/*', '!sass/**'],
+					dest: 'public/'
+				}],
+				ignoreInDest: "**/stylesheets/**",
+				updateAndDelete: true
+			},
       hmrc: {
         files: [{
           cwd: 'node_modules/assets-frontend/assets/',
@@ -75,9 +85,16 @@ module.exports = function(grunt){
         files: ['app/assets/sass/**/*.scss'],
         tasks: ['sass'],
         options: {
-          spawn: false,
+          spawn: false
         }
-      }
+      },
+			assets:{
+				files: ['app/assets/**/*', '!app/assets/sass/**'],
+				tasks: ['sync:assets'],
+				options: {
+					spawn: false
+				}
+			}
     },
 
     // nodemon watches for changes and restarts app
