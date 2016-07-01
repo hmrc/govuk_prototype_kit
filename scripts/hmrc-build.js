@@ -1,10 +1,13 @@
 var path = require('path');
-var spawn = require('child_process').spawn;
+var exec = require('child_process').exec
 
 var filepath = path.resolve('node_modules', 'assets-frontend');
 
-var build = spawn('./server.sh', ['build'], {
-  cwd: filepath
+var build = exec('./server.sh build', {cwd: filepath}, function (error, stdout, stderr) {
+  if (error) {
+    console.error('exec error:' + error);
+    return;
+  }
 });
 
 build.stdout.on('data', function(data) {
