@@ -7,7 +7,7 @@
     "node": ">=4.0 <5.0"
   },
   "scripts": {
-    "hmrc": "cd ./node_modules/assets-frontend; ./server.sh build; cd -;",
+    "hmrc": "node scripts/hmrc-build.js",
     "heroku-postbuild": "npm run hmrc",
     "prestart": "npm run hmrc",
     "start": "node start.js"
