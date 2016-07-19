@@ -1,10 +1,10 @@
 # Instructions for developers
 
-It's built on the [Express](http://expressjs.com/) framework, and uses these GOV.UK resources:
+It's built on the [Express](http://expressjs.com/) framework, and uses these resources:
 
 - [GOV.UK template](https://github.com/alphagov/govuk_template)
 - [GOV.UK front end toolkit](https://github.com/alphagov/govuk_frontend_toolkit)
-- [GOV.UK elements](https://github.com/alphagov/govuk_elements)
+- [HMRC assets frontend](https://github.com/hmrc/assest-frontend)
 
 ## Requirements
 
