@@ -6,6 +6,12 @@ The prototype kit provides a simple way to make interactive prototypes that look
 
 Read the [project principles](docs/principles.md).
 
+## How it differs from GOV.UK Prototype Kit
+
+This project is a fork of [GOV.UK Prototype Kit](https://github.com/alphagov/govuk_prototype_kit) so that we can benefit from the updates made to that project.
+
+The only difference is that it uses HMRC's assets-frontend instead of GOV.UK Elements as that's the library our frontends use in production.
+
 ## Security
 
 If you publish your prototypes online, they **must** be protected by a [username and password](docs/guides/publishing-on-heroku.md). This is to prevent members of the public finding prototypes and thinking they are real services.
