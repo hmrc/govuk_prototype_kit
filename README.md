@@ -8,9 +8,11 @@ Read the [project principles](docs/principles.md).
 
 ## How it differs from GOV.UK Prototype Kit
 
-This project is a fork of [GOV.UK Prototype Kit](https://github.com/alphagov/govuk_prototype_kit) so that we can benefit from the updates made to that project.
+This prototype kit includes HMRC's [assets-frontend](https://github.com/hmrc/assets-frontend) instead of GOV.UK Elements. This is because HMRCs styles include GOV.UK's styles. they also extend them to include patterns specific to HMRC's needs that don't exist in GOV.UK's styles.
 
-The only difference is that it uses HMRC's [assets-frontend](https://github.com/hmrc/assets-frontend) instead of GOV.UK Elements as that's the library our frontends use in production.
+For building pages with this prototype kit, you should therefore refer to HMRC's [Component Library](http://hmrc.github.io/assets-frontend/).
+
+This prototype kit is a fork of the [GOV.UK Prototype Kit](https://github.com/alphagov/govuk_prototype_kit) so that we can benefit from the updates made to that project. Currently it's updated manually when features become available in the GOV.UK Prototype Kit.
 
 ## Security
 
