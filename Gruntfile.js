@@ -1,4 +1,4 @@
-module.exports = function(grunt){
+module.exports = function (grunt) {
   grunt.initConfig({
 
     // Builds Sass
@@ -27,16 +27,16 @@ module.exports = function(grunt){
 
     // Copies templates and assets from external modules and dirs
     sync: {
-			assets: {
-				files: [{
-					expand: true,
-					cwd: 'app/assets/',
-					src: ['**/*', '!sass/**'],
-					dest: 'public/'
-				}],
-				ignoreInDest: "**/stylesheets/**",
-				updateAndDelete: true
-			},
+      assets: {
+        files: [{
+          expand: true,
+          cwd: 'app/assets/',
+          src: ['**/*', '!sass/**'],
+          dest: 'public/'
+        }],
+        ignoreInDest: "**/stylesheets/**",
+        updateAndDelete: true
+      },
       hmrc: {
         files: [{
           cwd: 'node_modules/assets-frontend/assets/',
@@ -49,26 +49,26 @@ module.exports = function(grunt){
           ],
           dest: 'hmrc_modules/'
         },
-        {
-          cwd: 'node_modules/assets-frontend/assets/dist',
-          src: [
-            'javascripts/**'
-          ],
-          dest: 'hmrc_modules/'
-        }]
+          {
+            cwd: 'node_modules/assets-frontend/assets/dist',
+            src: [
+              'javascripts/**'
+            ],
+            dest: 'hmrc_modules/'
+          }]
       },
       govuk: {
         files: [
-        {
-          cwd: 'node_modules/govuk_template_mustache/assets/',
-          src: '**',
-          dest: 'govuk_modules/govuk_template/assets/'
-        },
-        {
-          cwd: 'node_modules/govuk_template_jinja/views/layouts/',
-          src: '**',
-          dest: 'govuk_modules/govuk_template_jinja/views/layouts/'
-        }]
+          {
+            cwd: 'node_modules/govuk_template_mustache/assets/',
+            src: '**',
+            dest: 'govuk_modules/govuk_template/assets/'
+          },
+          {
+            cwd: 'node_modules/govuk_template_jinja/views/layouts/',
+            src: '**',
+            dest: 'govuk_modules/govuk_template_jinja/views/layouts/'
+          }]
       },
       govuk_template_jinja: {
         files: [{
@@ -88,13 +88,13 @@ module.exports = function(grunt){
           spawn: false
         }
       },
-			assets:{
-				files: ['app/assets/**/*', '!app/assets/sass/**'],
-				tasks: ['sync:assets'],
-				options: {
-					spawn: false
-				}
-			}
+      assets: {
+        files: ['app/assets/**/*', '!app/assets/sass/**'],
+        tasks: ['sync:assets'],
+        options: {
+          spawn: false
+        }
+      }
     },
 
     // nodemon watches for changes and restarts app
