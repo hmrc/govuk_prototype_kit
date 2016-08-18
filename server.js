@@ -54,8 +54,8 @@ nunjucks.ready(function(nj) {
 // Middleware to serve static assets
 app.use('/public', express.static(__dirname + '/public'));
 app.use('/public', express.static(__dirname + '/govuk_modules/govuk_template/assets'));
-app.use('/public', express.static(__dirname + '/hmrc_modules'));
-app.use('/public', express.static(__dirname + '/hmrc_modules/govuk_elements/govuk/public'));
+app.use('/public', express.static(__dirname + '/hmrc_modules/assets-frontend/'));
+app.use('/public', express.static(__dirname + '/hmrc_modules/assets-frontend/govuk_elements/govuk/public'));
 
 // Elements refers to icon folder instead of images folder
 app.use(favicon(path.join(__dirname, 'govuk_modules', 'govuk_template', 'assets', 'images','favicon.ico')));
