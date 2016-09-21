@@ -25,6 +25,17 @@ module.exports = function (grunt) {
       }
     },
 
+    postcss: {
+      options: {
+        processors: [
+          require('autoprefixer')({browsers: ['last 2 versions', 'IE >= 8']}),
+        ]
+      },
+      dist: {
+        src: 'public/stylesheets/*.css'
+      }
+    },
+
     // Copies templates and assets from external modules and dirs
     sync: {
       assets: {
@@ -123,6 +134,7 @@ module.exports = function (grunt) {
     'grunt-sync',
     'grunt-contrib-watch',
     'grunt-sass',
+    'grunt-postcss',
     'grunt-nodemon',
     'grunt-concurrent'
   ].forEach(function (task) {
@@ -131,7 +143,8 @@ module.exports = function (grunt) {
 
   grunt.registerTask('generate-assets', [
     'sync',
-    'sass'
+    'sass',
+    'postcss'
   ]);
 
   grunt.registerTask('default', [
