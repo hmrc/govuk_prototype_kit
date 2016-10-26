@@ -85,10 +85,12 @@ if (env === 'production' && useHttps === 'true'){
   app.use(utils.forceHttps);
 }
 
-// Disallow search index idexing
+// Setting default headers for each request
 app.use(function (req, res, next) {
   // Setting headers stops pages being indexed even if indexed pages link to them.
   res.setHeader('X-Robots-Tag', 'noindex');
+  // Set Cache-Control to no-store to stop states from being cached.
+  res.setHeader("Cache-Control", "no-cache,no-store,max-age=0");
   next();
 });
 
