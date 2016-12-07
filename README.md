@@ -1,4 +1,13 @@
-# HMRC Prototype kit
+# [DEPRECATED] HMRC Prototype kit
+
+## Which prototype kit should I use?
+
+There has been some confusion and differing advice about which prototype kit should be used for designing services. To Clarify the starting point for all new services should be the [GOV.UK prototype kit](https://github.com/alphagov/govuk_prototype_kit). This means we can ensure consistency across HMRC services and the rest of government.
+
+However, if you're already using the HMRC prototype kit to design a service, then you should continue to do so. 
+
+If you have issues or would like to discuss this please do so in the [#community-prototype](https://hmrcdigital.slack.com/messages/community-prototype) channel.
+
 
 ## About the prototype kit
 

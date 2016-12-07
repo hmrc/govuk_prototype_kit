@@ -9,7 +9,7 @@
   "scripts": {
     "hmrc": "node scripts/hmrc-build.js",
     "heroku-postbuild": "npm run hmrc",
-    "prestart": "npm run hmrc",
+    "prestart": "node scripts/deprecated-msg && npm run hmrc",
     "start": "node start.js"
   },
   "dependencies": {
