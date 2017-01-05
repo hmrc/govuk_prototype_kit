@@ -9,8 +9,8 @@ module.exports = function (grunt) {
           sourcemap: true,
           includePaths: [
             'govuk_modules/govuk_template/assets/stylesheets',
-            'hmrc_modules/govuk_elements/govuk/public/sass',
-            'hmrc_modules/govuk_frontend_toolkit/stylesheets',
+            'hmrc_modules/assets-frontend/govuk_elements/govuk/public/sass',
+            'hmrc_modules/assets-frontend/govuk_frontend_toolkit/stylesheets',
             'hmrc_modules/'
           ],
           outputStyle: 'expanded'
@@ -58,15 +58,13 @@ module.exports = function (grunt) {
             'govuk_frontend_toolkit/**',
             'images/**'
           ],
-          dest: 'hmrc_modules/'
+          dest: 'hmrc_modules/assets-frontend/'
         },
-          {
-            cwd: 'node_modules/assets-frontend/assets/dist',
-            src: [
-              'javascripts/**'
-            ],
-            dest: 'hmrc_modules/'
-          }]
+        {
+          cwd: 'node_modules/assets-frontend/assets/dist/javascripts',
+          src: ['**'],
+          dest: 'public/javascripts/assets-frontend/'
+        }]
       },
       govuk: {
         files: [
