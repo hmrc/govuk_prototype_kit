@@ -1,5 +1,7 @@
 {% extends "layout.html" %}
 
+{% from "details.njk" import details as details %}
+
 {% block page_title %}
   GOV.UK prototype kit
 {% endblock %}
@@ -54,7 +56,7 @@
 					</a>
 				</li>
 			</ul>
-
+      {{ details('Summary Example Title', 'Summary Example Text') }}
     </div>
   </div>
 </main>
