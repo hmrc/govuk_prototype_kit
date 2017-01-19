@@ -32,3 +32,11 @@ gulp.task('sass-documentation', function () {
   .pipe(sourcemaps.write())
   .pipe(gulp.dest(config.paths.public + '/stylesheets/'))
 })
+
+gulp.task('sass-frontend-alpha', function () {
+  return gulp.src(config.paths.govukModules + '/govuk-frontend-alpha/scss/*.scss')
+    .pipe(sass({outputStyle: 'expanded'}).on('error', sass.logError))
+    .pipe(sourcemaps.init())
+    .pipe(sourcemaps.write())
+    .pipe(gulp.dest(config.paths.public + '/stylesheets/'))
+})

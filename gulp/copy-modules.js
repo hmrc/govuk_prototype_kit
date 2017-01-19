@@ -27,3 +27,13 @@ gulp.task('copy-elements-sass', function () {
   return gulp.src(['node_modules/govuk-elements-sass/public/sass/**'])
   .pipe(gulp.dest(config.paths.govukModules + '/govuk-elements-sass/'))
 })
+
+gulp.task('copy-frontend-alpha-assets', function () {
+  return gulp.src(['node_modules/govuk_frontend_alpha/assets/**'])
+  .pipe(gulp.dest(config.paths.govukModules + '/govuk-frontend-alpha/'))
+})
+
+gulp.task('copy-frontend-alpha-macros', function () {
+  return gulp.src(['node_modules/govuk_frontend_alpha/components/*.njk'])
+  .pipe(gulp.dest(config.paths.govukModules + '/govuk-frontend-alpha/macros/'))
+})

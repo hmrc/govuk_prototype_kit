@@ -19,6 +19,7 @@ gulp.task('generate-assets', function (done) {
                 'copy-govuk-modules',
                 'sass',
                 'sass-documentation',
+                'sass-frontend-alpha',
                 'copy-assets',
                 'copy-documentation-assets', done)
 })
@@ -27,6 +28,8 @@ gulp.task('copy-govuk-modules', [
   'copy-toolkit',
   'copy-template-assets',
   'copy-elements-sass',
+  'copy-frontend-alpha-assets',
+  'copy-frontend-alpha-macros',
   'copy-template'
 ])
 
