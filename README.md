@@ -1,4 +1,12 @@
-# GOV.UK Prototype kit
+# Use GOV.UK Frontend Alpha in GOV.UK Prototype kit
+
+This repository is a Proof of Concept around using the Dist assets from [govuk_frontend_alpha](https://github.com/alphagov/govuk_frontend_alpha) in the GOV.UK prototype kit [hmrc/govuk_frontend_alpha#bundle](https://github.com/hmrc/govuk_frontend_alpha#bundle)
+
+The implementation for this work can be found in the `add-frontend-alpha-output` branch
+
+----
+
+## GOV.UK Prototype kit
 
 ## News
 
