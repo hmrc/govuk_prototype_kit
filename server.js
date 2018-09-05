@@ -122,8 +122,8 @@ app.use('/node_modules/govuk-frontend', express.static(path.join(__dirname, '/no
 // Serve extensions in /node_modules
 extensions.getMappedPaths(extensionsConfig.scripts).concat(
 	extensions.getMappedPaths(extensionsConfig.stylesheets),
-	extensions.getMappedPaths(extensionsConfig.assets),
-	extensions.getMappedPaths(extensionsConfig.globalAssets)
+	extensions.getMappedPaths(extensionsConfig.assets).reverse(),
+	extensions.getMappedPaths(extensionsConfig.globalAssets).reverse()
 ).forEach(paths => {
 	app.use(paths.publicPath, express.static(paths.filesystemPath))
 })

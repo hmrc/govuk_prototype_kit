@@ -13,43 +13,46 @@ const fs = require('fs')
 
 const pluginDetection = require('../lib/plugin-detection')
 const config = require('./config.json')
+const extensions = require('../lib/extensions')
+const extensionsConfig = extensions.getConfig()
 
 gulp.task('sass-plugins', function (done) {
-  const fileContents = pluginDetection.getList('sassIncludes', pluginDetection.transform.scopeFilePathsToModule)
-    .map(filePath => `@import "${filePath}";`)
-    .join('\n')
-  fs.writeFile(path.join(config.paths.assets, 'sass', 'allPluginIncludes-generated.scss'), fileContents, done)
+	const filePaths = extensionsConfig.sass
+		.map(filePath => `@import "${filePath}";`)
+		.join('\n')
+
+	fs.writeFile(path.join(config.paths.assets, 'sass', '_allPluginIncludes-generated.scss'), filePaths, done)
 })
 
 gulp.task('sass', function () {
-  return gulp.src(config.paths.assets + '/sass/*.scss')
-    .pipe(sourcemaps.init())
-    .pipe(sass({outputStyle: 'expanded'}).on('error', sass.logError))
-    .pipe(sourcemaps.write())
-    .pipe(gulp.dest(config.paths.public + '/stylesheets/'))
+	return gulp.src(config.paths.assets + '/sass/*.scss')
+		.pipe(sourcemaps.init())
+		.pipe(sass({ outputStyle: 'expanded' }).on('error', sass.logError))
+		.pipe(sourcemaps.write())
+		.pipe(gulp.dest(config.paths.public + '/stylesheets/'))
 })
 
 gulp.task('sass-documentation', function () {
-  return gulp.src(config.paths.docsAssets + '/sass/*.scss')
-    .pipe(sourcemaps.init())
-    .pipe(sass({outputStyle: 'expanded'}).on('error', sass.logError))
-    .pipe(sourcemaps.write())
-    .pipe(gulp.dest(config.paths.public + '/stylesheets/'))
+	return gulp.src(config.paths.docsAssets + '/sass/*.scss')
+		.pipe(sourcemaps.init())
+		.pipe(sass({ outputStyle: 'expanded' }).on('error', sass.logError))
+		.pipe(sourcemaps.write())
+		.pipe(gulp.dest(config.paths.public + '/stylesheets/'))
 })
 
 // Backward compatibility with Elements
 
 gulp.task('sass-v6', function () {
-  return gulp.src(config.paths.v6Assets + '/sass/*.scss')
-    .pipe(sourcemaps.init())
-    .pipe(sass({
-      outputStyle: 'expanded',
-      includePaths: [
-        'node_modules/govuk_frontend_toolkit/stylesheets',
-        'node_modules/govuk-elements-sass/public/sass',
-        'node_modules/govuk_template_jinja/assets/stylesheets'
-      ]
-    }).on('error', sass.logError))
-    .pipe(sourcemaps.write())
-    .pipe(gulp.dest(config.paths.public + '/v6/stylesheets/'))
+	return gulp.src(config.paths.v6Assets + '/sass/*.scss')
+		.pipe(sourcemaps.init())
+		.pipe(sass({
+			outputStyle: 'expanded',
+			includePaths: [
+				'node_modules/govuk_frontend_toolkit/stylesheets',
+				'node_modules/govuk-elements-sass/public/sass',
+				'node_modules/govuk_template_jinja/assets/stylesheets'
+			]
+		}).on('error', sass.logError))
+		.pipe(sourcemaps.write())
+		.pipe(gulp.dest(config.paths.public + '/v6/stylesheets/'))
 })
