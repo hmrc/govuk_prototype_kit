@@ -15,7 +15,7 @@ const extensions = require('../lib/extensions/extensions')
 const config = require('./config.json')
 
 gulp.task('sass-extensions', function (done) {
-  const fileContents = extensions.getFileSystemPaths('sass')
+  const fileContents = '$govuk-extensions-url-context: "/extension-assets";' + extensions.getFileSystemPaths('sass')
     .map(filePath => `@import "${filePath}";`)
     .join('\n')
   fs.writeFile(path.join(config.paths.lib + 'extensions', '_extensions.scss'), fileContents, done)

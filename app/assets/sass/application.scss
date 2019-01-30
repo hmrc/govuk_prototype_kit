@@ -2,7 +2,6 @@
 $govuk-global-styles: true;
 
 // Import GOV.UK Frontend
-$govuk-extensions-url-context: "/extension-assets";
 @import "lib/extensions/extensions";
 
 // Patterns that aren't in Frontend
