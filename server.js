@@ -83,12 +83,13 @@ if (isSecure) {
 middleware.forEach(func => app.use(func))
 
 // Set up App
-var appViews = extensions.getFileSystemPaths('nunjucksPaths').reverse().concat([
+var appViews = extensions.getAppViews([
   path.join(__dirname, '/app/views/'),
   path.join(__dirname, '/lib/')
 ])
 
 var nunjucksConfig = {
+  appViews,
   autoescape: true,
   noCache: true,
   watch: false // We are now setting this to `false` (it's by default false anyway) as having it set to `true` for production was making the tests hang
