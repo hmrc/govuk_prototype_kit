@@ -1,7 +1,6 @@
 /* eslint-env jest */
 var request = require('supertest')
 var app = require('../../server.js')
-var extensions = require('../../lib/extensions/extensions')
 var path = require('path')
 var fs = require('fs')
 var assert = require('assert')
@@ -55,7 +54,7 @@ describe('The Prototype Kit', () => {
         if (err) {
           done(err)
         } else {
-          assert.equal(res.text, readFile('node_modules/govuk-frontend/all.js'))
+          assert.strictEqual('' + res.text, readFile('node_modules/govuk-frontend/all.js'))
           done()
         }
       })
@@ -70,7 +69,7 @@ describe('The Prototype Kit', () => {
         if (err) {
           done(err)
         } else {
-          assert.equal(res.body, readFile('node_modules/govuk-frontend/assets/images/favicon.ico'))
+          assert.strictEqual('' + res.body, readFile('node_modules/govuk-frontend/assets/images/favicon.ico'))
           done()
         }
       })
@@ -78,7 +77,7 @@ describe('The Prototype Kit', () => {
 
   it('should not expose everything', function (done) {
     request(app)
-      .get('/extension-assets/govuk-frontend/common.js')
+      .get('/assets/common.js')
       .expect(404)
       .end(function (err, res) {
         if (err) {
@@ -87,9 +86,5 @@ describe('The Prototype Kit', () => {
           done()
         }
       })
-  })
-
-  it('should not break when asking for an extension key which isn\'t used', function () {
-    assert.deepEqual(extensions.getList('thisListDoesNotExist'), [])
   })
 })
